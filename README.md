@@ -1,6 +1,6 @@
-# Project 1: Build Your Own Tokenizer
+# Tokenizer
 
-A Byte Pair Encoding (BPE) tokenizer built from scratch — the same algorithm used by GPT-2, GPT-4, and LLaMA.
+A Byte Pair Encoding (BPE) tokenizer built from scratch, the same algorithm used by GPT-2, GPT-4, and LLaMA.
 
 ---
 
@@ -72,10 +72,10 @@ print(t2.encode("lower"))  # [10]
 ## Key Concepts
 
 **Why sub-word tokenization?**
-Word-level tokenization produces huge vocabularies and cannot handle unseen words. Character-level tokenization produces sequences that are too long and carries no meaning. BPE finds the middle ground — frequent patterns become single tokens, rare words fall back gracefully to smaller pieces.
+Word-level tokenization produces huge vocabularies and cannot handle unseen words. Character-level tokenization produces sequences that are too long and carries no meaning. BPE finds the middle ground, frequent patterns become single tokens, rare words fall back gracefully to smaller pieces.
 
 **Why does merge order matter?**
-The model trained on this tokenizer learned patterns based on specific token boundaries. Applying merges in a different order would produce different token IDs for the same text — breaking the model entirely.
+The model trained on this tokenizer learned patterns based on specific token boundaries. Applying merges in a different order would produce different token IDs for the same text, breaking the model entirely.
 
 **Why multiply pair counts by word frequency?**
 A pair inside a word that appears 1000 times in the corpus should outweigh a pair inside a word that appears once. Frequency reflects real usage.
